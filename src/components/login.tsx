@@ -103,24 +103,25 @@ export const FormOrder = () => {
   };
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 m-6">
       <Form {...form}>
         <form
           onSubmit={(event) => {
             event.preventDefault();
             form.handleSubmit(handleForm)(event);
           }}
-          className="flex flex-col sm:flex-row sm:items-end sm:gap-2 gap-4 relative w-full"
+          className="flex flex-col  sm:items-end sm:gap-2 gap-4 relative w-full"
         >
             <FormField
               control={form.control}
               name="CPF"
               render={({ field }) => (
-                <FormItem className="flex-1">
-                  <FormLabel className="text-orange-500">CPF:</FormLabel>
+                <FormItem className="w-full">
+                  <FormLabel className="text-black font-semibold">CPF:</FormLabel>
                   <FormControl>
                     <Input
-                      className="bg-orange-50 border border-orange-500 text-orange-700 placeholder-orange-400 w-full"
+                      className="
+                      border border-[#7B9EC7] text-gray-700 placeholder-[#7B9EC7] w-full"
                       placeholder="12345678910"
                       {...field}
                     />
@@ -136,12 +137,12 @@ export const FormOrder = () => {
               control={form.control}
               name="Senha"
               render={({ field }) => (
-                <FormItem className="flex-1">
-                  <FormLabel className="text-white">Senha do Admin</FormLabel>
+                <FormItem className="w-full">
+                  <FormLabel className="text-black font-semibold">Senha do Admin</FormLabel>
                   <FormControl>
                     <Input
                       type="password"
-                      className="text-white sm:w-52 w-full"
+                      className="border border-[#7B9EC7] text-gray-700 sm:w-52 w-full"
                       placeholder="Senha"
                       {...field}
                     />

@@ -18,26 +18,46 @@ export  function HomePage(){
     }
 
     return (
-        <main className="h-screen bg-[#171819] flex flex-col items-center justify-center gap-14 relative p-4 rounded-xl shadow-lg">
+        <main className="
+            md:flex-row-reverse 
+            h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col gap-2 relative p-4 rounded-xl shadow-lg
+        ">
             
-                     <section className="text-white text-2xl flex-1 flex flex-col items-center justify-end w-screen">
-                        <img 
-                            src="/LOGOTIPO.png" 
-                            alt="Ícone de eletrodomésticos"
-                            className="w-[140px] md:w-[200px] lg:w-[250px] h-auto object-contain"
-                            />
-                        </section>
-                        <section className="flex flex-col w-full max-w-sm items-center gap-0 flex-1">
-                            {/* Texto informativo */}
-                            <p className="text-white text-lg font-semibold -mt-12">
-                                Entre com a sua credencial
-                            </p>
-                            <FormOrder />
-                                          
+            <section className="  md:bg-[#F1F4FA]
+                text-white text-2xl flex-1 flex flex-col 
+                md:justify-center
+                items-center justify-end 
+                md:rounded-lg md:shadow-[0_10px_40px_rgba(0,0,0,0.08)]
+            ">
+            <img 
+                src="/login1.png" 
+                alt="Ícone de eletrodomésticos"
+                className="w-[300px] md:w-[450px] lg:w-[500px] h-auto object-contain"
+                />
+            </section>
 
-                        </section>
-
-            
+            <section className="
+            md:justify-center md:items-center h-full
+            flex flex-col w-full items-center flex-1 gap-4 p-6
+            ">
+                {/* Texto informativo */}
+                <p className="text-black  font-bold mt-12 text-center
+                    lg:text-3xl
+                    md:text-2xl
+                    sm:text-lg
+                    text-md
+                ">
+                    Login
+                </p>
+                 <p className="text-black  font-bold text-center
+                    lg:text-md
+                    md:text-sm
+                    text-xs
+                ">
+                    Faça login para acessar sua conta e gerenciar seus pedidos de eletrodomésticos.
+                </p>
+                <FormOrder />
+            </section>
 
             { enabledCookie ? null : (
                 <section className="w-full fixed bottom-0 flex items-center justify-center  text-white text-center p-6">
