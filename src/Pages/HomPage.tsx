@@ -19,6 +19,7 @@ export  function HomePage(){
 
     return (
         <main className="
+            overflow-y-auto
             md:flex-row-reverse 
             h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col gap-2 relative p-4 rounded-xl shadow-lg
         ">
@@ -36,50 +37,50 @@ export  function HomePage(){
                 />
             </section>
 
-            <section className="
-            md:justify-center md:items-center h-full
-            flex flex-col items-center flex-1 gap-4 p-6
-            ">
-                {/* Texto informativo */}
-                <p className="text-black  font-bold mt-12 text-center
-                    lg:text-5xl
-                    md:text-4xl
-                    sm:text-3xl 
-                    text-2xl
-                ">
-                    Login
-                </p>
-                 <p className="text-black  font-bold text-center
-                    lg:text-md
-                    md:text-sm 
-                    sm:text-xs 
-                    text-xs
-                ">
-                    Acesse sua conta consulte seus pedidos de pedidos.
-                </p>
-                <section className="flex flex-col items-center w-1/2">
-                    <FormOrder />
-                    <p className="text-black text-center
+            <section className="flex-1 flex flex-col items-center justify-between">
+                 <section className="
+                    md:justify-center md:items-center h-full
+                    flex flex-col items-center flex-1 gap-4 p-6
+                    ">
+                        {/* Texto informativo */}
+                        <p className="text-black font-bold text-center
+                            lg:text-5xl
+                            md:text-4xl
+                            sm:text-3xl 
+                            text-2xl
+                        ">
+                            Login
+                        </p>
+                        <p className="text-black  font-bold text-center
+                            lg:text-md
+                            md:text-sm 
+                            sm:text-xs 
+                            text-xs
+                        ">
+                            Acesse sua conta consulte seus pedidos de pedidos.
+                        </p>
+                    <section className="flex flex-col items-center w-1/2">
+                            <FormOrder />
+                            <p className="text-black text-center text-wrap
+                                lg:text-md
+                                md:text-sm 
+                                sm:text-xs 
+                                xs:text-xs
+                                text-[10px]
+                            ">
+                                Acesse com o CPF cadastrado pelo atendente no momento do serviço.
+                            </p>
+                    </section>      
+                </section>
+                <p className="text-gray-500 text-wrap
                         lg:text-md
                         md:text-sm 
                         sm:text-xs 
-                        text-xs
+                        xs:text-xs
+                        text-[8px]
                     ">
-                        Acesse com o CPF cadastrado pelo atendente no momento do serviço.
-                     </p>
-                </section>
-
-                  <p className="text-gray-500 absolute bottom-5
-                    lg:text-md
-                    md:text-sm 
-                    sm:text-xs 
-                    text-xs
-                ">
-                    Demo: Cliente: 00000000002 · Admin: 00000000001 / adm123
-                    </p>
-              
-              
-              
+                        Demo: Cliente: 00000000002 · Admin: 00000000001 / adm123
+                </p>
             </section>
             
             { enabledCookie ? null : (
