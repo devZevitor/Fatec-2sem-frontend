@@ -103,7 +103,7 @@ export const FormOrder = () => {
   };
 
   return (
-    <div className="flex gap-4 m-6">
+    <div className="flex gap-4 m-6 w-full">
       <Form {...form}>
         <form
           onSubmit={(event) => {
@@ -142,7 +142,7 @@ export const FormOrder = () => {
                   <FormControl>
                     <Input
                       type="password"
-                      className="border border-[#7B9EC7] text-gray-700 sm:w-52 w-full"
+                      className="border border-[#7B9EC7] text-gray-700 w-full"
                       placeholder="Senha"
                       {...field}
                     />
@@ -155,7 +155,7 @@ export const FormOrder = () => {
 
           <Button
             type="submit"
-            className="bg-orange-500 text-white border border-orange-500 rounded-lg px-4 py-2 hover:bg-white hover:text-orange-500 transition-colors w-full sm:w-auto"
+            className="bg-[#7B9EC7] text-white border border-[#7B9EC7] rounded-lg px-4 py-2 hover:bg-gray-400 cursor-pointer hover:font-bold hover:text-black transition-colors w-full "
           >
             Entrar
           </Button>

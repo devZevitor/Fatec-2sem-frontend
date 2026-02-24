@@ -23,21 +23,21 @@ export function OrdersPage() {
     
     
     return (
-        <main  className="h-screen bg-[#171819] flex flex-col items-center justify-center gap-14 relative" >
+        <main  className="h-screen bg-[#FFFF] flex flex-col items-center justify-center gap-14 relative" >
             
             {/* Botão voltar */}
             <div className="w-full flex justify-between items-center absolute top-5 left-0 px-6 z-10">
             {/* Logo da marca à esquerda */}
-            <img
-                src="/LOGOTIPO.png" 
+            {/* <img
+                src="/login1.png" 
                 alt="Ícone de eletrodomésticos"
                 className="w-[100px] md:w-[120px] lg:w-[150px] h-auto object-contain"
-            />
+            /> */}
 
             {/* Botão voltar à direita */}
             <button
                 onClick={handleLogoutUser}
-                className="text-orange-500 border-2 border-orange-500 rounded-lg p-1"
+                className="text-black border-2 border-black rounded-lg p-1"
                 >
                 <ArrowLeft />
             </button>

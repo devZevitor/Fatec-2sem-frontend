@@ -27,7 +27,7 @@ export const SideBar = ({
                     <Hash />
                 </div>
                 <div className="flex flex-col justify-center ">
-                    <h2 className="text-black ">JWC eletrônica</h2>
+                    <h2 className="text-black ">Interdiciplinar</h2>
                     <h3 className="text-black text-xs">Painel administrativo</h3>
                 </div>
             </div>

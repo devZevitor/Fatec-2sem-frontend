@@ -38,25 +38,29 @@ export  function HomePage(){
 
             <section className="
             md:justify-center md:items-center h-full
-            flex flex-col w-full items-center flex-1 gap-4 p-6
+            flex flex-col items-center flex-1 gap-4 p-6
             ">
                 {/* Texto informativo */}
                 <p className="text-black  font-bold mt-12 text-center
-                    lg:text-3xl
-                    md:text-2xl
-                    sm:text-lg
-                    text-md
+                    lg:text-5xl
+                    md:text-4xl
+                    sm:text-3xl 
+                    text-2xl
                 ">
                     Login
                 </p>
                  <p className="text-black  font-bold text-center
                     lg:text-md
-                    md:text-sm
+                    md:text-sm 
+                    sm:text-xs 
                     text-xs
                 ">
-                    Faça login para acessar sua conta e gerenciar seus pedidos de eletrodomésticos.
+                    Acesse sua conta consulte seus pedidos de pedidos.
                 </p>
-                <FormOrder />
+                <section className="flex flex-col items-center w-1/2">
+                      <FormOrder />
+                </section>
+              
             </section>
 
             { enabledCookie ? null : (
