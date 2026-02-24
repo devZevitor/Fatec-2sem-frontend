@@ -58,11 +58,30 @@ export  function HomePage(){
                     Acesse sua conta consulte seus pedidos de pedidos.
                 </p>
                 <section className="flex flex-col items-center w-1/2">
-                      <FormOrder />
+                    <FormOrder />
+                    <p className="text-black text-center
+                        lg:text-md
+                        md:text-sm 
+                        sm:text-xs 
+                        text-xs
+                    ">
+                        Acesse com o CPF cadastrado pelo atendente no momento do serviço.
+                     </p>
                 </section>
+
+                  <p className="text-gray-500 absolute bottom-5
+                    lg:text-md
+                    md:text-sm 
+                    sm:text-xs 
+                    text-xs
+                ">
+                    Demo: Cliente: 00000000002 · Admin: 00000000001 / adm123
+                    </p>
+              
+              
               
             </section>
-
+            
             { enabledCookie ? null : (
                 <section className="w-full fixed bottom-0 flex items-center justify-center  text-white text-center p-6">
                     <div>
