@@ -111,7 +111,7 @@ export const CardCreateProduct = () => {
                                         <FormControl>
                                             <Input type="text" placeholder="Descrição (opcional)" {...field}/>
                                         </FormControl>
-                                        <FormMessage />.
+                                        <FormMessage />
                                     </FormItem>
                                 )}
                             />
