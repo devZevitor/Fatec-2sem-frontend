@@ -10,13 +10,17 @@ import { CardCreateOrder } from "@/components/cardCreateOrder"
 import { CardListUser } from "@/components/cardListUser"
 
 export  function DashboardPage(){
-    const {isLoading,data} = useAuth()
+    const {isLoading, data, isError} = useAuth()
+    
     const [toggle, setToggle] = useState<boolean>(false)
-
     const [activeCard, setActiveCard] = useState<"user" | "order" | "product" | null>(null)
+    
+    // Validação segura dos dados
+    const isAuthenticated = data?.ok === true && data?.status === 200 && data?.authenticate === true
 
     if(isLoading) { return <div className="text-white bg-[#171819]"><h2>Carregando...</h2></div>}
-    if (!data?.ok || data?.status === false) {
+    
+    if (isError || !isAuthenticated) {
         return <Navigate to="/" replace />
     }
 

@@ -14,8 +14,8 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        //target: "http://localhost:3333",
-        target: "https://surprising-zulema-interdiciplinar-fatec-fc7cbde3.koyeb.app/",
+        target: "http://localhost:3333",
+        // target: "https://surprising-zulema-interdiciplinar-fatec-fc7cbde3.koyeb.app/",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
