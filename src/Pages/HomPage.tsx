@@ -1,3 +1,4 @@
+import { CookieBanner } from "@/components/cookieBanner";
 import { FormOrder } from "@/components/login";
 import { useAuth } from "@/http/get/useAuth";
 import { CheckCookies } from "@/utils/useCheckCookies";
@@ -83,6 +84,8 @@ export  function HomePage(){
                 </p>
             </section>
             
+            <CookieBanner />
+
             { enabledCookie ? null : (
                 <section className="w-full fixed bottom-0 flex items-center justify-center  text-white text-center p-6">
                     <div>
