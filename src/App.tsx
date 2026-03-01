@@ -16,7 +16,7 @@ export function App() {
             <Route element={<OrdersPage />} path="/user/order"/>
             <Route element={<DashboardPage />} path="/dashboard"/>
           </Routes>
-      </BrowserRouter>
+        </BrowserRouter>
     </QueryClientProvider>
   )
 }

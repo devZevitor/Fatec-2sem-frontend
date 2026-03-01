@@ -2,7 +2,7 @@ import { SideBar } from "@/components/sidebar"
 import { useAuth } from "@/http/get/useAuth"
 import { Navigate } from "react-router-dom"
 import {Menu, MessageCircleWarning, PanelLeftOpen} from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { CardListProduct } from "@/components/cardListProducts"
 import { CardListOrder } from "@/components/cardListOrder"
 import { CardCreateProduct } from "@/components/cardCreateProducts"
@@ -11,6 +11,7 @@ import { CardListUser } from "@/components/cardListUser"
 
 export  function DashboardPage(){
     const {isLoading, data, isError} = useAuth()
+    const [shouldNavigate, setShouldNavigate] = useState(false)
     
     const [toggle, setToggle] = useState<boolean>(false)
     const [activeCard, setActiveCard] = useState<"user" | "order" | "product" | null>(null)
@@ -18,9 +19,19 @@ export  function DashboardPage(){
     // Validação segura dos dados
     const isAuthenticated = data?.ok === true && data?.status === 200 && data?.authenticate === true
 
+    useEffect(() => {
+        // Só redireciona se NÃO estiver carregando E não autenticado
+        if (!isLoading && (isError || !isAuthenticated)) {
+            const timer = setTimeout(() => {
+                setShouldNavigate(true)
+            }, 100)
+            return () => clearTimeout(timer)
+        }
+    }, [isError, isAuthenticated, isLoading])
+
     if(isLoading) { return <div className="text-white bg-[#171819]"><h2>Carregando...</h2></div>}
     
-    if (isError || !isAuthenticated) {
+    if (shouldNavigate) {
         return <Navigate to="/" replace />
     }
 

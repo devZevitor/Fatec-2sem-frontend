@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import { API_URL } from "../api";
 import { authFetch } from "../authFetch";
+import type { getAuthenticateType } from "../types/get-authenticate-type";
 
 // const fetchAuth = async (token?: string) => {
 
@@ -24,7 +25,7 @@ import { authFetch } from "../authFetch";
 export const useAuth = () => {
     return useQuery({
         queryKey: ['auth-admin'],
-        queryFn: async () => {
+        queryFn: async (): Promise<getAuthenticateType> => {
            
             const response = await authFetch(`${API_URL}/auth`);
 

@@ -17,7 +17,6 @@ export const SideBar = ({
 
     const handlleLogoutAdmin = async () => {
         await logout()
-        window.location.href = "/" 
     }
 
     return (

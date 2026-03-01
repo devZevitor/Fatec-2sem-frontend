@@ -1,22 +1,21 @@
 import { CookieBanner } from "@/components/cookieBanner";
 import { FormOrder } from "@/components/login";
 import { useAuth } from "@/http/get/useAuth";
+import { useLoginRouterControl } from "@/utils/loginRouterControl";
 import { CheckCookies } from "@/utils/useCheckCookies";
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
 
 export  function HomePage(){
-    const {data} = useAuth()
-    const [enabledCookie, isEnabledCookie] = useState<boolean>(false);
+    const {data, isLoading} = useAuth()
+    const [enabledCookie, isEnabledCookie] = useState<boolean>(false);    
 
-     useEffect(() => {
+    useEffect(() => {
         const enabled = CheckCookies()
         isEnabledCookie(enabled)
     }, [])
 
-    if (data?.ok || data?.status === true) {
-        return <Navigate to="/dashboard" replace />
-    }
+    useLoginRouterControl("/", "/dashboard", data || {ok: false, status: 0, authenticate: false}, isLoading);
+
 
     return (
         <main className="
