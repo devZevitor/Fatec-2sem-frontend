@@ -1,6 +1,6 @@
 import type { LoginResponseType } from "@/http/types/response-loginAdmin-type";
 import type { LoginType } from "@/http/types/post-loginAdmin-type";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../api";
 import { authFetch } from "../authFetch";
@@ -8,6 +8,8 @@ import { CheckCookies } from "@/utils/useCheckCookies";
 
 export const useLoginAdmin = () => {
     const navigate = useNavigate()
+    const queryClient = useQueryClient()
+    
     return useMutation({
         mutationFn: async (data: LoginType) => {
             const response = await authFetch(`${API_URL}/login`, {
@@ -39,7 +41,14 @@ export const useLoginAdmin = () => {
             if(!enabled && data.token){
                 localStorage.setItem("token", data.token)
             }
-            navigate("/dashboard")
+            
+            queryClient.setQueryData(['auth-admin'], {
+                ok: true,
+                status: 200,
+                authenticate: true
+            })
+            
+            navigate("/dashboard", { replace: true })
         },
     })
 }

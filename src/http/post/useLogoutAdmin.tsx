@@ -29,8 +29,8 @@ export const useLogoutAdmin = () => {
             return data;
         },
         onSuccess: () => {
-            QueryClient.invalidateQueries({queryKey: ['auth-admin']})
-            navigate("/")
+            QueryClient.setQueryData(['auth-admin'], { ok: false, status: 401, authenticate: false })
+            navigate("/", { replace: true })
         }
     })
 }
